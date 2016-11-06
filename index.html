@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/ng-file-upload.js"></script>
+    <script src="scripts/fileUpload.js"></script>
+	<meta charset="utf-8" />
+</head>
+<body ng-app="fileUpload" ng-controller="MyCtrl">
+    <h4>Upload on file select</h4>
+
+    <button ngf-select="uploadFiles($files)" multiple>
+        Browse And Upload
+    </button>
+    <br>
+    <br>Files:
+    <ul>
+        <li ng-repeat="f in files" style="font:smaller">
+            {{f.name}}
+        </li>
+    </ul>
+    <span class="progress" ng-show="progress >= 0">
+        <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+    </span>
+    {{errorMsg}}
+</body>
+</html>
